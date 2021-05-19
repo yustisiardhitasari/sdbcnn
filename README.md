@@ -1,13 +1,6 @@
 # sdbcnn
 Satellite-Derived Bathymetry using Convolutional Neural Networks and Sentinel-2 multispectral images.
 
-&nbsp;
-<p float="left">
-    <img src="image/architecture.png"/>
-</p>
-
-&nbsp;
-
 ## Dependencies
 - [tensorflow-2](https://www.tensorflow.org/)
 - [numpy](https://numpy.org/)
