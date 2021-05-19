@@ -10,6 +10,7 @@ Satellite-Derived Bathymetry using Convolutional Neural Networks and Sentinel-2 
 - [sklearn](https://scikit-learn.org/stable/)
 
 ## Data
-Bathymetric depths are collected from [MBES](https://maps.ngdc.noaa.gov/viewers/bathymetry/) and [LiDAR](https://coast.noaa.gov/dataviewer/\#/lidar/search/). Multispectral images use [Sentinel-2 Level-2A](https://scihub.copernicus.eu/)
+- The Sentinel-2 Level-2A images are open and accessible through the [Copernicus Open Access Hub](https://scihub.copernicus.eu/).
+- The National Oceanic and Atmospheric Administration (NOAA) Bathymetric Data Viewer provides [MBES](https://maps.ngdc.noaa.gov/viewers/bathymetry/) and [LiDAR](https://coast.noaa.gov/dataviewer/\#/lidar/search/) bathymetry data sets.
 
 Detailed implementation and results can be found in the project report.
