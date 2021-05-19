@@ -3,7 +3,7 @@ Satellite-Derived Bathymetry using Convolutional Neural Networks and Sentinel-2 
 
 &nbsp;
 <p float="left">
-    <img src="image/methodology.png"/>
+    <img src="image/architecture.png"/>
 </p>
 
 &nbsp;
