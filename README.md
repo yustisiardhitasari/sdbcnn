@@ -14,9 +14,9 @@ Information about the data:
 - The Sentinel-2 Level-2A images are open and accessible through the [Copernicus Open Access Hub](https://scihub.copernicus.eu/).
 - The National Oceanic and Atmospheric Administration (NOAA) Bathymetric Data Viewer provides [MBES](https://maps.ngdc.noaa.gov/viewers/bathymetry/) and [LiDAR](https://coast.noaa.gov/dataviewer/\#/lidar/search/) bathymetry data sets.
 
-You have to download the multispectral and bathymetric data manually and then perform several preprocessing tasks. The preprocessing can be carried out using [QGIS](https://qgis.org/en/site/), [LAStools](https://rapidlasso.com/lastools/) or [PDAL](https://pdal.io/) if needed. Alternatively, you can use some preprocessing scripts provided under 'preprocess/' to stack the multispectral bands, clip the data, and perform image correction (can be skipped).
+You have to download the multispectral and bathymetric data manually and then perform several preprocessing tasks. The preprocessing can be carried out using [QGIS](https://qgis.org/en/site/), [LAStools](https://rapidlasso.com/lastools/) or [PDAL](https://pdal.io/) if needed. Alternatively, you can use some preprocessing scripts provided under `preprocess/` to stack the multispectral bands, clip the data, and perform image correction (can be skipped).
 
-This repo provides an example data set, under 'data/', that has been preprocessed.
+This repo provides an example data set, under `data/`, that has been preprocessed.
 
 ## A baseline architecture of CNN for SDB
 <p float="left">
