@@ -33,17 +33,27 @@ This repo provides an example data set, under `data/`, that has been preprocesse
 
 ## Shallow water depth extraction
 ### Prepare the data:
+```
 python collect_all_data.npy
+```
 
 ### Run the training:
+```
 python train_val.py
+```
 
 ### Run the evaluation:
+```
 python test.py
+```
+```
 python eval.py
+```
 
 ### Run the SDB generator:
+```
 python sdb_gen.py
+```
 
 ## Results
 | Area                  | RMSE  | R2    | 
