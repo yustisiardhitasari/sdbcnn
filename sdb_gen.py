@@ -49,7 +49,7 @@ def main():
         col = arr_depth.shape[2]
     
     # merged tiles and save as tif
-    result = utils.merged_tiles(depth_pred, row, col, window_shape=(args.window,args.window))
+    result = utils.merged_tiles(depth_pred, row, col, window_size=(args.window,args.window))
     utils.write_tif(folder_data, folder_data, args.fdepth, 'sdbcnn_'+dt, result)
 
 
