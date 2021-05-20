@@ -33,15 +33,12 @@ print(f'medAE: {medAE:.2f}, min: {mini:.2f}, max: {maxi:.2f}')
 # tvu
 order = '2' #option: special/1/2
 if order == 'special':
-    # order special
     a = 0.25
     b = 0.0075
 elif order == '1':
-    # order 1a/1b
     a = 0.5
     b = 0.013
 else:
-    # order 2
     a = 1
     b = 0.023
 

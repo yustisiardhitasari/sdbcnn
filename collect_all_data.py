@@ -12,7 +12,7 @@ DATA_PATH = os.path.join(ROOT_DIR, 'data/')
 window = 9
 step = 3
 channel = 6
-image_number = 'one' #one image, else multi-temporal image
+image_number = 'one' #one image, else multi images
 
 if image_number == 'one':
 	# one image
@@ -21,7 +21,7 @@ if image_number == 'one':
                             	'ponce_depth_aoi1_10m_crct.tif',
                             	window, step, channel)
 else:
-	# multi-temporal image
+	# multi images
 	fimg_list = [line.rstrip() for line in open(os.path.join(DATA_PATH, 'fimg_list.txt'))]
 	fdepth_list = [line.rstrip() for line in open(os.path.join(DATA_PATH, 'fdepth_list.txt'))]
 	

@@ -19,15 +19,15 @@ def collect_npy_data(folder, out_folder, fimg, fdepth, window, step, channel):
         arr_depth = depth.read()
 
     # img tiling
-    img_stack = moving_window(arr_img, window_shape=(window, window), steps=(1, 1), channel=channel)
+    img_stack = moving_window(arr_img, window_size=(window, window), steps=(1, 1), channel=channel)
     np.save(out_folder+'rgbnss_'+dt, img_stack, allow_pickle=True)
-    img_stack = moving_window(arr_img, window_shape=(window, window), steps=(step, step), channel=channel)
+    img_stack = moving_window(arr_img, window_size=(window, window), steps=(step, step), channel=channel)
 
     # depth tiling
-    depth_stack = moving_window(arr_depth, window_shape=(window, window), steps=(1, 1), channel=1)
+    depth_stack = moving_window(arr_depth, window_size=(window, window), steps=(1, 1), channel=1)
     depth_stack = np.float32(depth_stack)
     np.save(out_folder+'depth_'+dt, depth_stack, allow_pickle=True)
-    depth_stack = moving_window(arr_depth, window_shape=(window, window), steps=(step, step), channel=1)
+    depth_stack = moving_window(arr_depth, window_size=(window, window), steps=(step, step), channel=1)
     
     # remove nodata values
     img_nodata = np.float32(img.nodata)
@@ -65,9 +65,11 @@ def collect_npy_data(folder, out_folder, fimg, fdepth, window, step, channel):
     np.save(out_folder+'depth_tst_'+dt, depth_tst, allow_pickle=True)
 
 
-def moving_window(arr, window_shape, steps, channel):
+def moving_window(arr, window_size, steps, channel):
+    """Adapted from https://gist.github.com/meowklaski/4bda7c86c6168f3557657d5fb0b5395a
+    """
     in_shape = np.array(arr.shape[-len(steps):])
-    window_shape = np.array(window_shape)
+    window_size = np.array(window_size)
     steps = np.array(steps)
     nbytes = arr.strides[-1]
 
@@ -78,11 +80,11 @@ def moving_window(arr, window_shape, steps, channel):
     # number of bytes to step to populate sliding window view
     strides = tuple(int(i) * nbytes for i in step_strides + window_strides)
 
-    outshape = tuple((in_shape - window_shape) // steps + 1)
-    outshape = outshape + arr.shape[:-len(steps)] + tuple(window_shape)
-    tiles = np.lib.stride_tricks.as_strided(arr, shape=outshape, strides=strides, writeable=False)
+    outshape = tuple((in_shape - window_size) // steps + 1)
+    outshape = outshape + arr.shape[:-len(steps)] + tuple(window_size)
 
-    stack = tiles.reshape(tiles.shape[0]*tiles.shape[1], window_shape[0], window_shape[1], channel)
+    tiles = np.lib.stride_tricks.as_strided(arr, shape=outshape, strides=strides, writeable=False)
+    stack = tiles.reshape(tiles.shape[0]*tiles.shape[1], window_size[0], window_size[1], channel)
 
     if channel == 1:
         stack = stack[:, 2, 2, :]
@@ -90,9 +92,9 @@ def moving_window(arr, window_shape, steps, channel):
     return stack
 
 
-def merged_tiles(arr, row, col, window_shape):
-    r_extra = np.floor(window_shape[0] / 2).astype(int)
-    c_extra = np.floor(window_shape[1] / 2).astype(int)
+def merged_tiles(arr, row, col, window_size):
+    r_extra = np.floor(window_size[0] / 2).astype(int)
+    c_extra = np.floor(window_size[1] / 2).astype(int)
 
     arr_in = np.reshape(arr, (row - 2*r_extra, col - 2*c_extra, 1))
 
