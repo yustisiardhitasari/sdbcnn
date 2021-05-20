@@ -10,7 +10,7 @@ ROOT_DIR = BASE_DIR
 DATA_PATH = os.path.join(ROOT_DIR, 'data/')
 
 window = 9
-step = 3
+stride = 3
 channel = 6
 image_number = 'one' #one image, else multi images
 
@@ -19,7 +19,7 @@ if image_number == 'one':
 	utils.collect_npy_data(DATA_PATH, DATA_PATH,
 				'ponceRGBNSS_S2_190108_aoi1.tif',
                             	'ponce_depth_aoi1_10m_crct.tif',
-                            	window, step, channel)
+                            	window, stride, channel)
 else:
 	# multi images
 	fimg_list = [line.rstrip() for line in open(os.path.join(DATA_PATH, 'fimg_list.txt'))]
@@ -30,4 +30,4 @@ else:
 	    os.mkdir(output_folder)
 	
 	for i in range(len(fimg_list)):
-	    utils.collect_npy_data(DATA_PATH, output_folder, fimg_list[i], fdepth_list[i], window, step, channel)
+	    utils.collect_npy_data(DATA_PATH, output_folder, fimg_list[i], fdepth_list[i], window, stride, channel)

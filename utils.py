@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 
 
-def collect_npy_data(folder, out_folder, fimg, fdepth, window, step, channel):
+def collect_npy_data(folder, out_folder, fimg, fdepth, window, stride, channel):
     elements = fimg.split('_')
     dt = os.path.basename(elements[2])
 
@@ -21,13 +21,13 @@ def collect_npy_data(folder, out_folder, fimg, fdepth, window, step, channel):
     # img tiling
     img_stack = moving_window(arr_img, window_size=(window, window), steps=(1, 1), channel=channel)
     np.save(out_folder+'rgbnss_'+dt, img_stack, allow_pickle=True)
-    img_stack = moving_window(arr_img, window_size=(window, window), steps=(step, step), channel=channel)
+    img_stack = moving_window(arr_img, window_size=(window, window), steps=(stride, stride), channel=channel)
 
     # depth tiling
     depth_stack = moving_window(arr_depth, window_size=(window, window), steps=(1, 1), channel=1)
     depth_stack = np.float32(depth_stack)
     np.save(out_folder+'depth_'+dt, depth_stack, allow_pickle=True)
-    depth_stack = moving_window(arr_depth, window_size=(window, window), steps=(step, step), channel=1)
+    depth_stack = moving_window(arr_depth, window_size=(window, window), steps=(stride, stride), channel=1)
     
     # remove nodata values
     img_nodata = np.float32(img.nodata)
