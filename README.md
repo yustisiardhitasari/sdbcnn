@@ -65,4 +65,4 @@ python sdb_gen.py
 | Makua, Hawaii         | 0.79  | 0.98  |
 | Honolulu, Hawaii      | 1.34  | 0.94  |
 
-More detailed description and results can be found in the [project report].
+More detailed description and results can be found in the [project report](http://resolver.tudelft.nl/uuid:662ac71f-6373-4128-8eeb-163b8e727b72).
