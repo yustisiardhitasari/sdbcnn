@@ -66,3 +66,30 @@ python sdb_gen.py
 | Honolulu, Hawaii      | 1.34  | 0.94  |
 
 More detailed description and results can be found in the [project report](http://resolver.tudelft.nl/uuid:662ac71f-6373-4128-8eeb-163b8e727b72).
+
+## Citing
+```
+@article{Lumban-Gaol2022,
+    author = {Lumban-Gaol, Yustisi and Ohori, Ken Arroyo and Peters, Ravi},
+    doi = {10.1080/01490419.2022.2091696},
+    journal = {Marine Geodesy},
+    number = {6},
+    pages = {615--644},
+    publisher = {Taylor & Francis},
+    title = {{Extracting Coastal Water Depths from Multi- Temporal Sentinel-2 Images Using Convolutional Neural Networks Extracting Coastal Water Depths from Multi-Temporal 		Sentinel-2 Images Using Convolutional Neural Networks}},		
+    url = {https://doi.org/10.1080/01490419.2022.2091696},		
+    volume = {45},		
+    year = {2022}		
+    }		
+		
+@inproceedings{Lumban-Gaol2021,
+    author = {Lumban-Gaol, Y. A. and Ohori, K. A. and Peters, R. Y.},
+    booktitle = {International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences - ISPRS Archives},
+    doi = {10.5194/isprs-archives-XLIII-B3-2021-201-2021},
+    issn = {16821750},
+    number = {B3-2021},
+    title = {{Satellite-derived bathymetry using convolutional neural networks and multispectral sentinel-2 images}},
+    volume = {43},
+    year = {2021}
+    } 
+```
