@@ -76,7 +76,7 @@ More detailed description and results can be found in the [project report](http:
     number = {6},
     pages = {615--644},
     publisher = {Taylor & Francis},
-    title = {{Extracting Coastal Water Depths from Multi- Temporal Sentinel-2 Images Using Convolutional Neural Networks Extracting Coastal Water Depths from Multi-Temporal 		Sentinel-2 Images Using Convolutional Neural Networks}},		
+    title = {{Extracting Coastal Water Depths from Multi- Temporal Sentinel-2 Images Using Convolutional Neural Networks Extracting Coastal Water Depths from Multi-Temporal Sentinel-2 Images Using Convolutional Neural Networks}},		
     url = {https://doi.org/10.1080/01490419.2022.2091696},		
     volume = {45},		
     year = {2022}		
